@@ -10,6 +10,17 @@
   box-sizing: border-box;
 }
 
+label {
+  display: block;
+}
+
+input,
+textarea {
+  border: none;
+  font: inherit;
+  width: 100%;
+}
+
 body {
   background-color: #fbf9f9;
 }
@@ -28,6 +39,11 @@ ul {
 
 li {
   list-style: none;
+}
+
+.break {
+  flex-basis: 100%;
+  height: 0;
 }
 
 .btn {
@@ -70,11 +86,11 @@ li {
 }
 
 .container {
+  padding: 0px 10%;
   display: flex;
   align-items: center;
   align-content: space-between;
   justify-content: space-between;
-  padding: 0px 10%;
 }
 
 .header {
@@ -182,9 +198,43 @@ a:hover {
   margin-inline: auto;
 }
 
+.hero-banner img {
+  position: relative;
+  animation-name: example;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    left: 0px;
+    top: 0px;
+  }
+  25% {
+    top: 25px;
+  }
+  50% {
+    top: 50px;
+  }
+
+  75% {
+    top: 25px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+
 .services {
   padding-block: 80px;
   background: #fafaff;
+}
+
+.services .container {
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
 }
 
 .services .section-title {
@@ -265,4 +315,111 @@ a:hover {
 
 .service-card:hover .card-text {
   color: hsla(0, 0%, 100%, 0.5);
+}
+
+.contact {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.contact .container {
+  flex-wrap: wrap;
+}
+
+.contact-header {
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px;
+}
+
+.contact-form .wrapper-flex {
+  display: flex;
+  gap: 30px;
+}
+
+.wrapper-flex .input-wrapper {
+  width: 50%;
+}
+
+.contact .section-title {
+  margin-bottom: 15px;
+}
+
+.contact .section-text {
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  margin-bottom: 50px;
+}
+
+.input-wrapper {
+  margin-bottom: 20px;
+}
+
+.contact .input-field {
+  background: transparent;
+  color: #3b3951;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 1px solid #9e9db94d;
+  border-radius: 4px;
+}
+
+.contact .input-field:focus {
+  outline: none;
+  background: #f0f2fa;
+}
+
+.contact .input-field::placeholder {
+  color: #8d8bac;
+}
+
+.contact-wrapper {
+  display: grid;
+  gap: 80px;
+  align-items: center;
+}
+
+.footer-content {
+  background-color: #292839;
+  color: white;
+  padding: 80px 0px;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-top: 25px;
+}
+
+.footer .container {
+  justify-content: space-between;
+}
+
+.footer-profile {
+  max-width: 350px;
+}
+
+.footer-item-box {
+  display: grid;
+  gap: 50px;
+}
+
+.footer-item-title {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.footer-link {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 15px;
+  transition: 0.25s ease;
+  padding-block: 10px;
+}
+
+.footer-link:is(:hover, :focus) {
+  color: white;
+  transform: translateX(5px);
 }
